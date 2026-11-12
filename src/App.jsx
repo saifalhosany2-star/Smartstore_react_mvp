@@ -2,10 +2,13 @@
 import { useState } from "react";
 import "./App.css";
 import ProductForm from "./Components/ProductForm.jsx";
+import ProductList from "./Components/ProductList.jsx";
+
 function App() {
   const [products, setProducts] = useState([]);
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   function addProduct(e) {
     e.preventDefault();
@@ -25,34 +28,27 @@ function App() {
     setQuantity("");
   }
 
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
+  );
+
   return (
     <main>
       <h1>SmartStore Inventory Management</h1>
-      
 
-      
-<ProductForm
-  name={name}
-  quantity={quantity}
-  onNameChange={setName}
-  onQuantityChange={setQuantity}
-  onAddProduct={addProduct}
-/>
+      <ProductForm
+        name={name}
+        quantity={quantity}
+        onNameChange={setName}
+        onQuantityChange={setQuantity}
+        onAddProduct={addProduct}
+      />
 
-
-      <h2>Product List</h2>
-
-      {products.length === 0 ? (
-        <p>No products added yet.</p>
-      ) : (
-        <ul>
-          {products.map((product) => (
-            <li key={product.id}>
-              {product.name} — Quantity: {product.quantity}
-            </li>
-          ))}
-        </ul>
-      )}
+      <ProductList
+        products={filteredProducts}
+        searchTerm={searchTerm}
+        onSearchTermChange={setSearchTerm}
+      />
     </main>
   );
 }
