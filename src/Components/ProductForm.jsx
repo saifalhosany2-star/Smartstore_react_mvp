@@ -1,5 +1,5 @@
 
-function ProductForm({ name, quantity, onNameChange, onQuantityChange, onAddProduct }) {
+function ProductForm({ name, quantity, onNameChange, onQuantityChange, onAddProduct, onCancelAddProduct }) {
   return (
     <section>
       <h2>Add Product</h2>
@@ -16,10 +16,18 @@ function ProductForm({ name, quantity, onNameChange, onQuantityChange, onAddProd
           placeholder="Quantity"
           value={quantity}
           onChange={(e) => onQuantityChange(e.target.value)}
-          min="1"
+          min="0"
           required
         />
         <button type="submit">Add Product</button>
+        
+<button
+  type="button"
+  onClick={onCancelAddProduct}
+>
+  Cancel
+</button>
+
       </form>
     </section>
   );

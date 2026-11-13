@@ -28,6 +28,13 @@ function App() {
     setQuantity("");
   }
 
+function cancelAddProduct() {
+  setName("");
+  setQuantity("");
+}
+
+
+
 function deleteProduct(id) {
   setProducts((prevProducts) =>
     prevProducts.filter((product) => product.id !== id)
@@ -58,6 +65,7 @@ function updateProduct(id, newName, newQuantity) {
         onNameChange={setName}
         onQuantityChange={setQuantity}
         onAddProduct={addProduct}
+        onCancelAddProduct={cancelAddProduct}
       />
 
       <ProductList
