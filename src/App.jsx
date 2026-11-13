@@ -28,6 +28,12 @@ function App() {
     setQuantity("");
   }
 
+function deleteProduct(id) {
+  setProducts((prevProducts) =>
+    prevProducts.filter((product) => product.id !== id)
+  );
+}
+
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
   );
@@ -48,6 +54,8 @@ function App() {
         products={filteredProducts}
         searchTerm={searchTerm}
         onSearchTermChange={setSearchTerm}
+        onDeleteProduct={deleteProduct}
+
       />
     </main>
   );

@@ -1,4 +1,4 @@
-function ProductList({ products, searchTerm, onSearchTermChange }) {
+function ProductList({ products, searchTerm, onSearchTermChange, onDeleteProduct }) {
   const hasProducts = products.length > 0;
 
   return (
@@ -25,6 +25,14 @@ function ProductList({ products, searchTerm, onSearchTermChange }) {
           {products.map((product) => (
             <li key={product.id}>
               {product.name} — Quantity: {product.quantity}
+              
+<button
+  type="button"
+  onClick={() => onDeleteProduct(product.id)}
+>
+  Delete
+</button>
+
             </li>
           ))}
         </ul>
