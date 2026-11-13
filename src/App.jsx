@@ -55,9 +55,27 @@ function updateProduct(id, newName, newQuantity) {
     product.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
   );
 
+const totalProducts = products.length;
+
+const totalQuantity = products.reduce(
+  (sum, product) => sum + Number(product.quantity),
+  0
+);
+
+const lowStockProducts = products.filter(
+  (product) => Number(product.quantity) < 5
+).length;
+
   return (
     <main>
       <h1>SmartStore Inventory Management</h1>
+
+<section>
+  <h2>Inventory Dashboard</h2>
+  <p>Total Products: {totalProducts}</p>
+  <p>Total Quantity: {totalQuantity}</p>
+  <p>Low Stock Products: {lowStockProducts}</p>
+</section>
 
       <ProductForm
         name={name}
