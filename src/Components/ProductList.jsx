@@ -62,6 +62,10 @@ function saveEditing() {
             <li key={product.id}>
               {product.name} — Quantity: {product.quantity}
    
+{Number(product.quantity) < 5 && (
+  <strong> — Low Stock</strong>
+)}
+
 {editingId === product.id && (
   <div>
     <label>Name:</label>
