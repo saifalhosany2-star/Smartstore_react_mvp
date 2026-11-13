@@ -1,16 +1,50 @@
-# React + Vite
+# SmartStore React MVP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+SmartStore is a React-based inventory management application developed as a semester project for the Principles of Modern Development and Engineering Thinking course.
 
-Currently, two official plugins are available:
+The application helps users manage products, monitor inventory quantities, and identify low-stock items.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies Used
+- React
+- JavaScript
+- Vite
+- HTML5 and CSS
+- Git and GitHub
 
-## React Compiler
+## Implemented Features
+1. SMART-01: Search products by name.
+2. SMART-02: Delete products from inventory.
+3. SMART-03: Edit existing product information.
+4. SMART-04: Add products with form validation.
+5. SMART-05: Display low-stock alerts for quantities below 5.
+6. SMART-06: Inventory dashboard showing:
+   - Total Products
+   - Total Quantity
+   - Low Stock Products
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Installation and Running
+1. Clone the GitHub repository.
+2. Open the project folder in VS Code.
+3. Install dependencies using `npm install`.
+4. Start the application using `npm run dev`.
+5. Open the local URL displayed in the terminal.
 
-## Expanding the ESLint configuration
+## Testing and Verification
+The implemented features were manually tested, including product creation, editing, deletion, searching, and low-stock detection.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The dashboard counters were also checked after inventory changes.
+
+## GitHub Project Management
+
+The project was managed using six GitHub Issues with clear tasks and acceptance criteria.
+
+All six issues have been implemented, tested, and closed.
+
+## Project Status
+All six planned MVP features are completed and pushed to GitHub.
+
+
+## GitHub Repository
+https://github.com/saifalhosany2-star/Smartstore_react_mvp
+
