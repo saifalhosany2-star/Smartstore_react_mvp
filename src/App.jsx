@@ -34,6 +34,16 @@ function deleteProduct(id) {
   );
 }
 
+function updateProduct(id, newName, newQuantity) {
+  setProducts((prevProducts) =>
+    prevProducts.map((product) =>
+      product.id === id
+        ? { ...product, name: newName, quantity: newQuantity }
+        : product
+    )
+  );
+}
+
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
   );
@@ -55,6 +65,7 @@ function deleteProduct(id) {
         searchTerm={searchTerm}
         onSearchTermChange={setSearchTerm}
         onDeleteProduct={deleteProduct}
+        onSaveProduct={updateProduct}
 
       />
     </main>
